@@ -1,5 +1,4 @@
 const Hapi = require('hapi');
-const settings = require('config');
 
 const routes = require('./routes');
 const plugins = require('./plugins');
@@ -7,12 +6,12 @@ const plugins = require('./plugins');
 var server = new Hapi.Server({
     connections:{
         routes:{
-            cors:settings.cors
+            cors: true
         }
     }
 });
 console.log(process.env);
-server.connection({port: process.env.PORT || settings.port, host: process.env.hostname || settings.host});
+server.connection({port: process.env.PORT || 3000, host: process.env.hostname || "0.0.0.0"});
 
 //Register the plugins
 server.register(plugins, function (err) {

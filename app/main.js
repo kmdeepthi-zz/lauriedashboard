@@ -1,5 +1,5 @@
 require('expose?$!expose?jQuery!jquery');
-require("bootstrap-webpack");
+// require("bootstrap-webpack");
 require('./static/styles/main.less');
 
 import React from 'react';
