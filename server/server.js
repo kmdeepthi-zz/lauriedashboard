@@ -11,7 +11,8 @@ var server = new Hapi.Server({
         }
     }
 });
-server.connection({port:settings.port, host:settings.host});
+console.log(process.env);
+server.connection({port: process.env.PORT || settings.port, host: process.env.hostname || settings.host});
 
 //Register the plugins
 server.register(plugins, function (err) {
