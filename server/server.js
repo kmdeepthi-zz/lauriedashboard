@@ -10,7 +10,6 @@ var server = new Hapi.Server({
         }
     }
 });
-console.log(process.env);
 server.connection({port: process.env.PORT || 3000, host: process.env.hostname || "0.0.0.0"});
 
 //Register the plugins
